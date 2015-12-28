@@ -1,0 +1,133 @@
+/**
+ * 
+ */
+
+@color-1: #4285F4;
+@color-2: #EA4335;
+@color-3: #FBBC05;
+@color-4: #34A853;
+
+@color-font: #fff;
+
+@global-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.19);
+
+.ro-status-wrap{
+	position: fixed;
+	top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    pointer-events: none;
+    box-sizing: border-box;
+
+    transition: -webkit-transform .25s;
+    transition: transform .25s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+
+    .ro-status-msg{
+    	text-align: center;
+    	margin: 10px auto 25px;
+    	max-width: 300px;
+    	z-index: 1000;
+    	padding: 3px 5px;
+    	border-radius: 3px;
+    	border: 1px solid transparent;
+    	outline: 0;
+    	line-height: normal;
+    	font-weight: bolder;
+    	font-size: .8rem;
+    	background: @color-1;
+    	color: @color-font;
+    	box-shadow: @global-shadow;
+
+        
+    }
+
+    .ro-status-fade-in{
+        -webkit-animation-duration: .2s;
+        animation-duration: .2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-name: fadeInDown;
+        animation-name: fadeInDown;
+    }
+
+    .ro-status-fade-out{
+        -webkit-animation-duration: .2s;
+        animation-duration: .2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-name: fadeOutUp;
+        animation-name: fadeOutUp;
+    }
+
+    [data-color="sky"] {
+        background:@color-1;
+    }
+    [data-color="red"] {
+        background:@color-2;
+    }
+    [data-color="green"] {
+        background:@color-4;
+    }
+    [data-color="yellow"] {
+        background:@color-3;
+    }
+}
+
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}

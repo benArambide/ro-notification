@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head >
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" >
+    
+    <link rel="stylesheet" type="text/css" href="dist/ro-notification.css">
+
+    <script type="text/javascript" src="../vendor/angular/angular.min.js"></script>
+
+    <script type="text/javascript" src="src/ro-notification.js"></script>
+    <title>Rocoto status</title>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<style type="text/css">
+body{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+</style>
+
+<body ng-app="TestApp">
+    <div ng-controller="TestControl">
+        <h1>Ro status</h1>
+        {{test}}
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <button ng-click="showStatus()">Mostrar Estatus</button>
+    </div>
+</body>
+
+<script type="text/javascript">
+    var app = angular.module('TestApp', ['RoNotification']);
+    app.controller('TestControl', ['$scope','RoNotification', function ($scope,RoNotification) {
+        
+        $scope.showStatus = function()
+        {
+            RoNotification.status('Existe un error','red');    
+        }
+    }])
+</script>
+</html>
